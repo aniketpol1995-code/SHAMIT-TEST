@@ -1,58 +1,64 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
-
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: Georgia, serif;
-            background: #fff8f0;
-            color: #654321;
-        }
-
-        .invitation {
-            padding: 35px 20px;
-            max-width: 500px;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .message {
-            margin-top: 25px;
-            font-style: italic;
-        }
-    </style>
-</head>
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#3b0718">
+<title>ShAmit | Wedding Celebration</title>
+<style>
+:root{--wine:#3b0718;--wine2:#64132b;--gold:#d8b56d;--cream:#fff4df;--ink:#351b1b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#260610;color:var(--cream);font-family:Georgia,'Times New Roman',serif}
+button{font:inherit}.intro{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#8b4b37 0,#4c1527 42%,#21050e 100%);padding:24px}
+.intro:before{content:"";position:absolute;inset:18px;border:1px solid #d8b56d88;border-radius:48% 48% 8px 8px;pointer-events:none}
+.arch{position:absolute;inset:5vh 8vw 0;border:7px double #cba45d;border-bottom:0;border-radius:48% 48% 0 0;box-shadow:inset 0 0 60px #e9c67a22,0 0 35px #0008}
+.arch:before{content:"✧  ❧  ✧";position:absolute;top:8%;width:100%;text-align:center;color:var(--gold);font-size:clamp(20px,4vw,38px);letter-spacing:12px}
+.door-wrap{position:absolute;inset:15% 16% 0;display:flex;perspective:1200px;z-index:2}
+.door{width:50%;height:100%;background:linear-gradient(90deg,#2a0611,#6d2331 45%,#310814);border:3px solid #cda85e;box-shadow:inset 0 0 0 8px #3a0b19,inset 0 0 0 10px #cda85e55;transition:transform 2.2s cubic-bezier(.2,.7,.1,1);position:relative}
+.door:before{content:"";position:absolute;inset:12%;border:2px solid #d9b76d;border-radius:48% 48% 4px 4px;box-shadow:inset 0 0 20px #d9b76d33}
+.door:after{content:"❦";position:absolute;top:44%;color:#e6c77e;font-size:clamp(32px,6vw,65px);left:calc(50% - 20px)}
+.door.left{transform-origin:left}.door.right{transform-origin:right}
+.opened .door.left{transform:rotateY(-108deg)}.opened .door.right{transform:rotateY(108deg)}
+.centerpiece{position:relative;z-index:3;text-align:center;max-width:720px;padding:34px 24px;background:#2d0918d9;border:1px solid var(--gold);box-shadow:0 20px 70px #0009;border-radius:180px 180px 14px 14px;animation:glow 4s infinite alternate}
+@keyframes glow{to{box-shadow:0 20px 80px #e5b85b33}}
+.eyebrow{color:#e7c77c;letter-spacing:.24em;text-transform:uppercase;font:11px Arial,sans-serif}
+.monogram{font-size:clamp(42px,9vw,82px);color:#f1d58f;margin:12px 0;text-shadow:0 4px 20px #000}
+.names{font-size:clamp(32px,6vw,58px);line-height:1.1;margin:10px 0}.amp{color:var(--gold);font-style:italic}
+.sub{font:14px/1.7 Arial,sans-serif;color:#f7e7ce}
+.goldbtn{border:1px solid var(--gold);background:linear-gradient(135deg,#e2c17a,#a77837);color:#2e0b13;padding:14px 26px;border-radius:30px;cursor:pointer;font: bold 12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:16px}
+.hint{font:11px Arial,sans-serif;color:#e6c77e;margin-top:12px}
+main{display:none;background:linear-gradient(#3b0c1d,#210711);}.main-inner{max-width:900px;margin:auto;padding:64px 20px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.smallbtn{background:transparent;color:#f4d994;border:1px solid #b99050;border-radius:20px;padding:9px 15px;cursor:pointer;font:12px Arial}
+.hero{text-align:center;padding:54px 10px 44px}.hero h1{font-size:clamp(42px,8vw,76px);font-weight:normal;margin:12px 0;color:#f2d28c}.hero p{font:14px/1.8 Arial;color:#f6e6d0}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:28px 0}
+.section{text-align:center;padding:24px 0}.section h2{font-size:30px;font-weight:normal;color:#f0d18a}.section p{font:14px/1.8 Arial;color:#f7e8d4}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}.unit{min-width:72px;padding:14px 10px;border:1px solid #b58c4d;border-radius:10px;background:#ffffff08}.unit strong{display:block;font-size:26px;color:#f4d38e}.unit span{font:10px Arial;letter-spacing:.1em;color:#e8d4b1}
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:24px}.event{padding:22px 16px;border:1px solid #a77b43;border-radius:12px;background:linear-gradient(145deg,#ffffff0d,#ffffff03)}.event .emoji{font-size:28px}.event h3{color:#f2d18c;font-weight:normal;margin:10px 0}.event p{font:13px/1.7 Arial;color:#f2dfc4;margin:4px}
+.venue{font:14px/1.9 Arial;color:#f6e5ce}.footer{text-align:center;color:#d7b879;font:12px Arial;padding:32px 0}
+.petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}.petal{position:absolute;top:-30px;color:#e6bb83;opacity:.7;animation:fall linear infinite}@keyframes fall{to{transform:translateY(110vh) rotate(420deg);opacity:0}}
+@media(max-width:600px){.arch{inset:8vh 4vw 0}.door-wrap{inset:17% 10% 0}.centerpiece{padding:28px 15px}.intro:before{inset:10px}}
+</style></head>
 <body>
-    <div class="invitation">
-        <h1>Wedding Invitation</h1>
-
-        <p>
-            A beautiful celebration awaits!
-        </p>
-
-        <p class="message">
-            Our wedding invitation is being prepared.
-            Please visit again soon.
-        </p>
-    </div>
-</body>
-</html>
+<section class="intro" id="intro"><div class="arch"></div><div class="petals" id="petals"></div>
+<div class="door-wrap" id="doors"><div class="door left"></div><div class="door right"></div></div>
+<div class="centerpiece"><div class="eyebrow" data-en="A royal celebration of love" data-mr="प्रेमाच्या मंगल सोहळ्यास आपले स्वागत">A royal celebration of love</div>
+<div class="monogram">S<span class="amp">&</span>A</div><div class="names">Shalaka <span class="amp">&</span> Amit</div>
+<div class="sub" data-en="Together with our families, we invite you to celebrate our wedding." data-mr="आमच्या कुटुंबीयांसह, आमच्या विवाह सोहळ्यास आपणास सस्नेह निमंत्रण.">Together with our families, we invite you to celebrate our wedding.</div>
+<button class="goldbtn" id="enter" data-en="Open the Invitation" data-mr="निमंत्रण उघडा">Open the Invitation</button>
+<div class="hint">✦ SAMPLE DEMO • NOT A REAL INVITATION ✦</div></div></section>
+<main id="invitation"><div class="main-inner">
+<div class="topbar"><div class="eyebrow">✦ SHAMIT • WEDDING CELEBRATION ✦</div><button class="smallbtn" id="lang">मराठी</button></div>
+<div class="hero"><div class="eyebrow" data-en="Two hearts • One beautiful journey" data-mr="दोन मने • एक सुंदर प्रवास">Two hearts • One beautiful journey</div><h1>Shalaka <span class="amp">&</span> Amit</h1><p data-en="With the blessings of our families, we joyfully invite you to be part of our new beginning." data-mr="कुटुंबीयांच्या आशीर्वादाने, आमच्या नव्या आयुष्याच्या सुरुवातीचे साक्षीदार होण्यासाठी आपणास आनंदाने आमंत्रित करीत आहोत.">With the blessings of our families, we joyfully invite you to be part of our new beginning.</p><div class="eyebrow">14 FEBRUARY 2027 • NASHIK</div><div class="countdown" id="countdown"></div></div>
+<div class="rule"></div><section class="section"><div class="eyebrow" data-en="The celebrations" data-mr="मंगल सोहळे">The celebrations</div><h2 data-en="Wedding Festivities" data-mr="विवाह सोहळे">Wedding Festivities</h2><div class="events">
+<div class="event"><div class="emoji">🌼</div><h3 data-en="Haldi Ceremony" data-mr="हळदी समारंभ">Haldi Ceremony</h3><p>12 February 2027</p><p>10:30 AM</p><p>Courtyard, Saffron Valley</p></div>
+<div class="event"><div class="emoji">🎶</div><h3 data-en="Sangeet Night" data-mr="संगीत संध्या">Sangeet Night</h3><p>13 February 2027</p><p>7:00 PM</p><p>Royal Orchid Lawn</p></div>
+<div class="event"><div class="emoji">💍</div><h3 data-en="Wedding Ceremony" data-mr="विवाह सोहळा">Wedding Ceremony</h3><p>14 February 2027</p><p>11:45 AM</p><p>Royal Orchid Lawn</p></div>
+<div class="event"><div class="emoji">🥂</div><h3 data-en="Reception" data-mr="स्वागत समारंभ">Reception</h3><p>15 February 2027</p><p>7:30 PM</p><p>The Grand Courtyard</p></div></div></section>
+<div class="rule"></div><section class="section"><div class="eyebrow" data-en="Join us in Nashik" data-mr="नाशिक येथे अवश्य या">Join us in Nashik</div><h2 data-en="Venue" data-mr="स्थळ">Venue</h2><p class="venue">Royal Orchid Lawn<br>Gangapur Road, Nashik, Maharashtra<br>India</p><p class="sub" data-en="All names, dates and venues on this page are fictional demo details and will be replaced." data-mr="या पृष्ठावरील नावे, तारखा आणि स्थळे ही केवळ नमुना माहिती असून नंतर बदलली जातील.">All names, dates and venues on this page are fictional demo details and will be replaced.</p></section>
+<div class="rule"></div><div class="section"><h2 data-en="With love, Shalaka & Amit" data-mr="सप्रेम, शलाका आणि अमित">With love, Shalaka & Amit</h2><p data-en="We look forward to celebrating with you!" data-mr="आपल्या उपस्थितीची आम्ही आतुरतेने वाट पाहत आहोत!">We look forward to celebrating with you!</p></div>
+<div class="footer">SHAMIT • SAMPLE DIGITAL INVITATION</div></div></main>
+<script>
+const enter=document.getElementById('enter');enter.addEventListener('click',()=>{document.getElementById('doors').classList.add('opened');setTimeout(()=>{document.getElementById('intro').style.display='none';document.getElementById('invitation').style.display='block';window.scrollTo(0,0)},1500)});
+let marathi=false;document.getElementById('lang').addEventListener('click',()=>{marathi=!marathi;document.getElementById('lang').textContent=marathi?'English':'मराठी';document.querySelectorAll('[data-en]').forEach(el=>el.textContent=marathi?el.dataset.mr:el.dataset.en)});
+const target=new Date('2027-02-14T11:45:00+05:30');function tick(){let n=Math.max(0,target-new Date()),d=Math.floor(n/86400000),h=Math.floor(n%86400000/3600000),m=Math.floor(n%3600000/60000),s=Math.floor(n%60000/1000);document.getElementById('countdown').innerHTML=[[d,'DAYS'],[h,'HOURS'],[m,'MINS'],[s,'SECS']].map(x=>`<div class="unit"><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}tick();setInterval(tick,1000);
+const petals=document.getElementById('petals');for(let i=0;i<22;i++){let p=document.createElement('span');p.className='petal';p.textContent=['✿','✧','❀'][i%3];p.style.left=(Math.random()*100)+'%';p.style.animationDuration=(7+Math.random()*9)+'s';p.style.animationDelay=(-Math.random()*12)+'s';p.style.fontSize=(12+Math.random()*14)+'px';petals.appendChild(p)}
+</script></body></html>
